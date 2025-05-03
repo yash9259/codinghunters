@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodingHunters - Professional Software Development</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>CodingHunters</h1>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">How We Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="quote-btn" id="quoteBtn">Get Quote</button></li>
+                <li><a href="#contact" class="hire-us-btn">Hire Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Your Inspirational Quote</h2>
+            <p id="quoteText"></p>
+            <button class="refresh-quote">New Quote</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div id="particles-js"></div>
+        <div class="coding-animation">
+            <div class="code-line"><span class="keyword">function</span> createInnovation() {</div>
+            <div class="code-line">  <span class="keyword">return</span> {</div>
+            <div class="code-line">    technology: <span class="string">'cutting-edge'</span>,</div>
+            <div class="code-line">    solutions: <span class="string">'scalable'</span>,</div>
+            <div class="code-line">    quality: <span class="string">'exceptional'</span></div>
+            <div class="code-line">  };</div>
+            <div class="code-line">}</div>
+        </div>
+        <div class="floating-tech">
+            <i class="fab fa-react"></i>
+            <i class="fab fa-node-js"></i>
+            <i class="fab fa-python"></i>
+            <i class="fab fa-angular"></i>
+            <i class="fab fa-aws"></i>
+        </div>
+        <div class="hero-content">
+            <h1 class="animate-text">Welcome to CodingHunters</h1>
+            <p class="animate-text">Transforming Ideas into Digital Reality</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <p class="section-subtitle">Transforming Businesses Through Technology</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p class="service-description">Custom web solutions built with cutting-edge technologies to create powerful and scalable applications.</p>
+                <ul class="service-features">
+                    <li>Responsive Design</li>
+                    <li>E-commerce Solutions</li>
+                    <li>Progressive Web Apps</li>
+                    <li>Custom CMS Development</li>
+                </ul>
+                <a href="#contact" class="learn-more">Learn More</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>App Development</h3>
+                <p class="service-description">Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
+                <ul class="service-features">
+                    <li>iOS & Android Apps</li>
+                    <li>Cross-platform Solutions</li>
+                    <li>App Maintenance</li>
+                    <li>Performance Optimization</li>
+                </ul>
+                <a href="#contact" class="learn-more">Learn More</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-cogs"></i>
+                <h3>ERP Solutions</h3>
+                <p class="service-description">Comprehensive ERP systems to streamline your business operations and boost productivity.</p>
+                <ul class="service-features">
+                    <li>Business Process Automation</li>
+                    <li>Resource Planning</li>
+                    <li>Custom ERP Development</li>
+                    <li>Integration Services</li>
+                </ul>
+                <a href="#contact" class="learn-more">Learn More</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-cube"></i>
+                <h3>Odoo Services</h3>
+                <p class="service-description">Expert Odoo implementation and customization to optimize your business workflows.</p>
+                <ul class="service-features">
+                    <li>Odoo Implementation</li>
+                    <li>Custom Module Development</li>
+                    <li>Integration & Migration</li>
+                    <li>Training & Support</li>
+                </ul>
+                <a href="#contact" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section id="process" class="process">
+        <h2>How We Work</h2>
+        <p class="section-subtitle">Our Proven Development Process</p>
+        <div class="process-container">
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <i class="fas fa-search"></i>
+                    <h3>Discovery & Strategy</h3>
+                    <p>We begin by deeply understanding your vision, goals, target audience, and technical needs through collaborative workshops.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h3>Design & Prototyping</h3>
+                    <p>Our design team creates intuitive user interfaces (UI) and user experiences (UX), visualized through wireframes and interactive prototypes.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <i class="fas fa-code"></i>
+                    <h3>Agile Development</h3>
+                    <p>Experienced developers build your solution using clean code and best practices, with regular updates and feedback loops.</p>
+                </div>
+            </div>
+        </div>
+        <div class="process-container mt-5">
+            <div class="process-step">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Quality Assurance</h3>
+                    <p>Rigorous testing across devices and scenarios ensures a robust, bug-free, and secure application before launch.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">05</div>
+                <div class="step-content">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Deployment & Launch</h3>
+                    <p>We manage the seamless deployment to your chosen environment, ensuring a smooth transition for your users.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">06</div>
+                <div class="step-content">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Support & Evolution</h3>
+                    <p>Post-launch, we offer ongoing support, maintenance, and iterative improvements to keep your solution optimal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About CodingHunters</h2>
+        <p class="section-subtitle">Passionate about crafting digital solutions that make a difference. Learn more about our mission and vision.</p>
+        
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" alt="Mission">
+                </div>
+                <div class="about-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>To engineer innovative and reliable software solutions that empower businesses, drive efficiency, and unlock new opportunities for growth.</p>
+            </div>
+
+            <div class="about-card">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" alt="Vision">
+                </div>
+                <div class="about-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>To be the most trusted technology partner for businesses, recognized for our deep expertise, unwavering integrity, and relentless commitment to client success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter Section -->
+    <section class="counter">
+        <div class="counter-container">
+            <div class="counter-item">
+                <i class="fas fa-project-diagram"></i>
+                <div class="counter-number" data-target="40">0</div>
+                <h3>Projects Completed</h3>
+            </div>
+            <div class="counter-item">
+                <i class="fas fa-smile-beam"></i>
+                <div class="counter-number" data-target="30">0</div>
+                <h3>Happy Clients</h3>
+            </div>
+            <div class="counter-item">
+                <i class="fas fa-clock"></i>
+                <div class="counter-number" data-target="2">0</div>
+                <h3>Years Experience</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="technologies">
+        <h2>Technologies We Master</h2>
+        <p class="section-subtitle">Cutting-edge tools and frameworks we use to build powerful solutions</p>
+        
+        <div class="tech-container">
+            <div class="tech-category">
+                <h3>Frontend</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fab fa-react"></i>
+                        <span>React.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-angular"></i>
+                        <span>Angular</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-vuejs"></i>
+                        <span>Vue.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3>Backend</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fab fa-node-js"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-java"></i>
+                        <span>Java</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-database"></i>
+                        <span>SQL/NoSQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3>Cloud & DevOps</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fab fa-aws"></i>
+                        <span>AWS</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-docker"></i>
+                        <span>Docker</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-kubernetes"></i>
+                        <span>Kubernetes</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-github"></i>
+                        <span>CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Our Projects</h2>
+        <p class="section-subtitle">Showcasing our best work and successful implementations</p>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="E-commerce Platform">
+                </div>
+                <div class="project-content">
+                    <h3>E-commerce Platform</h3>
+                    <p>A full-featured online shopping platform with inventory management, payment integration, and analytics dashboard.</p>
+                    <div class="project-tech">
+                        <span>React.js</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?q=80&w=1000&auto=format&fit=crop" alt="Healthcare App">
+                </div>
+                <div class="project-content">
+                    <h3>Healthcare Management App</h3>
+                    <p>Mobile application for patient management, appointment scheduling, and medical record tracking.</p>
+                    <div class="project-tech">
+                        <span>Flutter</span>
+                        <span>Firebase</span>
+                        <span>Node.js</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop" alt="ERP System">
+                </div>
+                <div class="project-content">
+                    <h3>Custom ERP System</h3>
+                    <p>Enterprise resource planning system with modules for HR, inventory, and financial management.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Cloud Migration">
+                </div>
+                <div class="project-content">
+                    <h3>Cloud Infrastructure Migration</h3>
+                    <p>Successfully migrated legacy systems to cloud infrastructure with zero downtime.</p>
+                    <div class="project-tech">
+                        <span>AWS</span>
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Reviews Section -->
+    <section class="reviews">
+        <h2>Client Reviews</h2>
+        <p class="section-subtitle">What our clients say about their experience working with us</p>
+        <div class="reviews-slider">
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-text">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"The team delivered our e-commerce platform ahead of schedule. Their attention to detail and responsive design expertise helped us increase our mobile sales by 45%. The integration with our inventory system works flawlessly."</p>
+                        </div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-details">
+                                <h4>Tech Solutions Ltd</h4>
+                                <p>E-commerce Development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-text">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Exceptional ERP implementation that streamlined our operations. The custom modules they developed saved us countless hours in data processing and reporting. Our efficiency improved by 60% within the first month."</p>
+                        </div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-details">
+                                <h4>Manufacturing Pro</h4>
+                                <p>ERP Implementation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-text">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Their cloud migration expertise helped us scale our application efficiently. The performance improvements and cost savings exceeded our expectations. Our cloud infrastructure costs reduced by 35%."</p>
+                        </div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-details">
+                                <h4>CloudScale Inc</h4>
+                                <p>Cloud Migration Project</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-text">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"The mobile app they developed for our healthcare service has revolutionized how we interact with patients. The UI is intuitive, and the real-time appointment system has reduced no-shows by 75%."</p>
+                        </div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-details">
+                                <h4>HealthCare Plus</h4>
+                                <p>Mobile App Development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-text">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Outstanding web application development service. They built our customer portal from scratch, and the results were impressive. User engagement increased by 80%, and customer support tickets reduced significantly."</p>
+                        </div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-details">
+                                <h4>ServiceHub Solutions</h4>
+                                <p>Web Application Development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-text">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"The Odoo implementation transformed our business processes. The customizations they made perfectly fit our workflow, and the training they provided made the transition smooth for our team."</p>
+                        </div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-details">
+                                <h4>Global Trade Corp</h4>
+                                <p>Odoo Implementation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <button class="prev-btn" aria-label="Previous review"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-btn" aria-label="Next review"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <form id="contact-form" action="https://formspree.io/f/mblogawj" method="POST">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <div class="contact-details">
+                <a href="mailto:huntersthecode@gmail.com" class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>huntersthecode@gmail.com</p>
+                </a>
+                <a href="tel:+919106433706" class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91 9106433706</p>
+                </a>
+                <a href="https://maps.google.com/?q=Bhuj,Kutch,Gujarat,India" target="_blank" class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Bhuj, Kutch, Gujarat, India</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Message Modal -->
+    <div id="successModal" class="modal success-modal">
+        <div class="modal-content success-content">
+            <span class="close-modal">&times;</span>
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Thank You!</h2>
+            <p>Your message has been sent successfully. We'll get back to you soon!</p>
+            <button class="ok-button">OK</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-tagline">
+            <p>Crafting digital excellence, one line of code at a time. We partner with businesses to build innovative and scalable software solutions.</p>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Our Work</a></li>
+                    <li><a href="#process">How We Work</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Core Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Web Development</a></li>
+                    <li><a href="#services">Mobile App Development</a></li>
+                    <li><a href="#services">Cloud Solutions</a></li>
+                    <li><a href="#services">AI & Automation</a></li>
+                    <li><a href="#services">ERP Solutions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Get In Touch</h3>
+                <div class="footer-contact">
+                    <p><i class="fas fa-envelope"></i> huntersthecode@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 91064 33706</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CodingHunters. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" type="module"></script>
+</body>
+</html> 
