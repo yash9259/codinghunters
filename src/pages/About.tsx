@@ -89,6 +89,25 @@ const About = () => {
     { icon: TrendingUp, label: "Continuous improvement" },
   ];
 
+  const leadershipHighlights = [
+    {
+      title: "100% custom software development",
+      desc: "No templates — every build is designed around real business workflows.",
+    },
+    {
+      title: "One-time cost solutions",
+      desc: "No forced subscriptions or hidden fees; we design for clarity and ROI.",
+    },
+    {
+      title: "Clean, maintainable, and scalable code",
+      desc: "Secure foundations that stay reliable as your business grows.",
+    },
+    {
+      title: "Long-term support and improvement",
+      desc: "Transparent partnership with continuous enhancements after launch.",
+    },
+  ];
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -114,7 +133,7 @@ const About = () => {
             </motion.span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-background mb-6 leading-tight">
               Custom Software Development{" "}
-              <span className="text-accent">Company in India</span>
+              <span className="text-accent">Company in Bhuj-Kutchh</span>
             </h1>
             <p className="text-background/70 text-lg md:text-xl max-w-2xl mx-auto">
               Building reliable, scalable, and cost-effective software solutions
@@ -172,7 +191,7 @@ const About = () => {
               </h2>
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 CodingHunters is a professional software development company in
-                India delivering custom web applications, mobile apps, ERP
+                Bhuj-Kutchh delivering custom web applications, mobile apps, ERP
                 systems, healthcare software, and finance software solutions for
                 businesses of all sizes.
               </p>
@@ -324,7 +343,7 @@ const About = () => {
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   To become a trusted technology partner for businesses across
-                  India and global markets by delivering excellence in every
+                  Bhuj-Kutchh and global markets by delivering excellence in every
                   project.
                 </p>
                 <div className="space-y-2">
@@ -398,6 +417,83 @@ const About = () => {
                   </li>
                 ))}
               </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section className="section-padding bg-background">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <span className="text-accent font-medium text-sm uppercase tracking-wider">Leadership</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+              Leadership Behind CodingHunters
+            </h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto">
+              Founded and led by Yash Thakkar, CodingHunters was created to replace rigid, expensive,
+              and inefficient systems with custom-built, scalable, and reliable software designed around real business needs.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-10 items-start max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-4"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
+                <Lightbulb className="w-4 h-4" />
+                Business-first mindset
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                With hands-on experience across custom software development, web applications, ERP systems,
+                healthcare platforms, and finance automation, Yash brings a practical approach focused on deep workflow
+                understanding and translating it into secure, easy-to-use, and future-ready digital systems.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Under this leadership, we follow a quality-first and transparency-driven development process that keeps you
+                close to decisions and outcomes.
+              </p>
+              <div className="p-5 rounded-xl bg-card border border-border">
+                <p className="text-foreground font-semibold mb-1">Our vision is simple:</p>
+                <p className="text-muted-foreground">
+                  Build software that delivers real value, improves efficiency, and supports business growth at every stage.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="grid sm:grid-cols-2 gap-4"
+            >
+              {leadershipHighlights.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05, duration: 0.45 }}
+                  className="p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center mb-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-1">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </div>

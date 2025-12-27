@@ -120,7 +120,7 @@ const Footer = () => {
             © {currentYear} CodingHunters. All rights reserved.
           </p>
           <p className="text-background/60 text-sm">
-            Custom Software Development Company in India
+            Custom Software Development Company in Bhuj-Kutchh
           </p>
         </div>
       </div>
