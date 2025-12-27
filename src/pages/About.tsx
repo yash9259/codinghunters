@@ -245,6 +245,18 @@ const About = () => {
         </div>
       </section>
 
+      {/* Location Section */}
+      <section className="section-padding bg-background border-b border-border">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              CodingHunters is based in Bhuj, Kutch and provides software development services
+              to businesses across Gujarat and India.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* What We Do */}
       <section className="section-padding bg-card">
         <div className="container-custom">

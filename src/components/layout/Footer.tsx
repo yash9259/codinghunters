@@ -60,6 +60,10 @@ const Footer = () => {
                 Bhuj, Kutch, India
               </div>
             </div>
+            <p className="text-background/70 text-sm mt-4 leading-relaxed">
+              Software Development Company in Bhuj, Kutch<br />
+              CodingHunters – Custom Software & Web Development Solutions
+            </p>
           </div>
 
           {/* Company Links */}
