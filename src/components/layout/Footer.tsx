@@ -114,8 +114,17 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Local SEO Footer */}
+        <div className="seo-footer border-t border-background/10 mt-12 pt-8">
+          <p className="text-background/70 text-sm text-center leading-relaxed">
+            CodingHunters – Software Development Company in Bhuj, Kutch, Gujarat.<br />
+            Services: Custom Software Development, Web Development, Mobile App Development,
+            ERP & Business Automation Solutions.
+          </p>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="border-t border-background/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="border-t border-background/10 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-background/60 text-sm">
             © {currentYear} CodingHunters. All rights reserved.
           </p>
