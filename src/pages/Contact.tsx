@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Linkedin, Instagram } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
@@ -78,6 +78,18 @@ const Contact = () => {
       label: "Location",
       value: "Bhuj, Kutch, India",
       href: null,
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      value: "@codinghunters",
+      href: "https://www.linkedin.com/company/codinghunters/",
+    },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      value: "@cod.inghunters",
+      href: "https://www.instagram.com/cod.inghunters?igsh=Nmt4eWE1dW10cnJ2",
     },
   ];
 

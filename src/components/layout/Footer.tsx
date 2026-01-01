@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Code2, Mail, Phone, MapPin } from "lucide-react";
+import { Code2, Mail, Phone, MapPin, Linkedin, Instagram } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -59,6 +59,26 @@ const Footer = () => {
                 <MapPin className="w-4 h-4" />
                 Bhuj, Kutch, India
               </div>
+            </div>
+            <div className="flex items-center gap-4 mt-4">
+              <a
+                href="https://www.linkedin.com/company/codinghunters/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/cod.inghunters?igsh=Nmt4eWE1dW10cnJ2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
