@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/technologies", label: "Technologies" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/why-us", label: "Why Us" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -18,6 +19,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  const isActive = (href: string) =>
+    location.pathname === href || location.pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +56,7 @@ const Navbar = () => {
                 key={link.href}
                 to={link.href}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  location.pathname === link.href
+                  isActive(link.href)
                     ? "text-cyan-400 bg-cyan-400/10"
                     : "text-gray-300 hover:text-white hover:bg-gray-800"
                 }`}
@@ -99,7 +103,7 @@ const Navbar = () => {
                   key={link.href}
                   to={link.href}
                   className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                    location.pathname === link.href
+                    isActive(link.href)
                       ? "text-cyan-400 bg-cyan-400/10"
                       : "text-gray-300 hover:text-white hover:bg-gray-800"
                   }`}
