@@ -21,4 +21,4 @@ This project is built with:
 - TypeScript
 - React
 - shadcn-ui
-- Tailwind CSS gfDo0GwCVaL5hikiIQesJA6LqQw8iL32m1lB
+- Tailwind CSS LZcvyFTRnsAV99dPcKKoc05w8usR660YJOIX
