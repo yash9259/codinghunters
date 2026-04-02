@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Code2, Mail, Phone, MapPin, Linkedin, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Instagram } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -25,8 +25,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-foreground text-background">
-      <div className="container-custom py-16">
+    <footer className="bg-foreground text-background relative">
+      <div className="container-custom py-16 pb-28 sm:pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
@@ -151,6 +151,17 @@ const Footer = () => {
           <p className="text-background/60 text-sm">
             Serving businesses across India
           </p>
+        </div>
+      </div>
+
+      <div className="absolute right-4 bottom-4">
+        <div className="flex items-center gap-2 rounded-md border border-background/15 bg-background/5 px-3 py-2">
+          <img
+            src="/Invoicing-powered-by-refrens.png"
+            alt="Invoicing powered by Refrens"
+            className="h-7 w-auto"
+          />
+          <span className="text-xs text-background/70">Invoicing powered by Refrens</span>
         </div>
       </div>
     </footer>
