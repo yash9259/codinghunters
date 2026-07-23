@@ -53,7 +53,7 @@ const Footer = () => {
                 className="flex items-center gap-2 text-background/70 hover:text-background transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                +91 9106433706
+                +91 8780015308
               </a>
               <div className="flex items-center gap-2 text-background/70">
                 <MapPin className="w-4 h-4" />
