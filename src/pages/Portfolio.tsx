@@ -56,8 +56,8 @@ const Portfolio = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Our <span className="text-gradient">Portfolio</span>
+            <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6">
+              Our <span>Portfolio</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               We've built solutions across diverse industries. Here's a glimpse
@@ -81,7 +81,7 @@ const Portfolio = () => {
                 className="p-6 rounded-2xl bg-background border border-border card-hover"
               >
                 <div
-                  className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center mb-4`}
+                  className={`w-12 h-12 rounded-lg border border-border bg-card text-primary flex items-center justify-center mb-5`}
                 >
                   <item.icon className="w-6 h-6" />
                 </div>
@@ -100,10 +100,10 @@ const Portfolio = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="text-center p-8 rounded-2xl bg-muted"
+            className="text-center p-10 rounded-2xl border border-border bg-background"
           >
             <p className="text-lg text-foreground font-medium mb-4">
-              📌 Live demos available on request
+              Live demos available on request
             </p>
             <Button variant="hero" size="lg" asChild>
               <Link to="/contact">

@@ -167,8 +167,8 @@ const Services = () => {
     <Layout>
       <section className="pt-32 pb-16 bg-gradient-hero">
         <div className="container-custom text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Our <span className="text-gradient">Services</span>
+          <h1 className="text-4xl md:text-5xl font-semibold mb-6">
+            Our <span>Services</span>
           </h1>
           <p className="text-muted-foreground">
             Comprehensive software solutions tailored to your business needs.
@@ -185,9 +185,11 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`p-6 rounded-2xl border ${service.borderColor}`}
+              id={service.id}
+              className="scroll-mt-28 rounded-2xl border border-border bg-card p-7 card-hover"
             >
-              <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+              <service.icon className="mb-5 h-6 w-6 text-primary" strokeWidth={1.6} aria-hidden="true" />
+              <h3 className="font-display text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-sm text-muted-foreground mb-4">
                 {service.description}
               </p>
@@ -195,7 +197,7 @@ const Services = () => {
               <ul className="space-y-2 mb-4">
                 {service.features.map((feature, i) => (
                   <li key={i} className="flex gap-2 text-sm">
-                    <CheckCircle2 className="w-4 h-4 text-accent" />
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                     {feature}
                   </li>
                 ))}
@@ -207,7 +209,7 @@ const Services = () => {
                     {service.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-2 py-1 text-xs bg-muted rounded"
+                        className="rounded-full border border-border bg-background px-2.5 py-1 text-xs text-muted-foreground"
                       >
                         {tech}
                       </span>

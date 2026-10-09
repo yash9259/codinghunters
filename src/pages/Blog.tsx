@@ -13,10 +13,10 @@ const Blog = () => {
       <section className="pt-32 pb-16 bg-background">
         <div className="container-custom">
           <div className="max-w-3xl mb-10">
-            <span className="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
               Insights
             </span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-4 mb-4">
+            <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mt-4 mb-4">
               Bhuj-Focused Software Insights
             </h1>
             <p className="text-lg text-muted-foreground">

@@ -104,9 +104,9 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6">
               Let's Discuss Your{" "}
-              <span className="text-gradient">Project</span>
+              <span>Project</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               Get a free consultation. Tell us about your project and we'll get
@@ -128,8 +128,8 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
               className="p-8 rounded-2xl bg-background border border-border"
             >
-              <h2 className="font-display text-2xl font-bold text-foreground mb-6">
-                Send us a Message
+              <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
+                Send us a message
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -225,8 +225,8 @@ const Contact = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-6"
             >
-              <div className="p-8 rounded-2xl bg-gradient-primary text-primary-foreground">
-                <h2 className="font-display text-2xl font-bold mb-4">
+              <div className="surface-ink overflow-hidden rounded-2xl p-8 text-white">
+                <h2 className="font-display text-2xl font-semibold mb-4">
                   Get in Touch
                 </h2>
                 <p className="opacity-90 mb-6">
@@ -236,7 +236,7 @@ const Contact = () => {
                 <div className="space-y-4">
                   {contactInfo.map((info) => (
                     <div key={info.label} className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-lg border border-white/15 flex items-center justify-center flex-shrink-0">
                         <info.icon className="w-5 h-5" />
                       </div>
                       <div>

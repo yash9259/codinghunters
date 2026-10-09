@@ -12,8 +12,8 @@ const PrivacyPolicy = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              🔐 Privacy <span className="text-gradient">Policy</span>
+            <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6">
+              Privacy <span>Policy</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               Effective Date: 30/1/2023
@@ -36,7 +36,7 @@ const PrivacyPolicy = () => {
             className="max-w-3xl mx-auto prose prose-slate"
           >
             <div className="p-8 rounded-2xl bg-background border border-border space-y-8">
-              <h2 className="font-display text-2xl font-bold text-foreground">
+              <h2 className="font-display text-2xl font-semibold text-foreground">
                 1. Information We Collect
               </h2>
               <div>
@@ -62,7 +62,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   2. How We Use Your Information
                 </h2>
                 <p className="text-muted-foreground mb-3">
@@ -78,7 +78,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   3. Data Protection & Security
                 </h2>
                 <p className="text-muted-foreground mb-3 leading-relaxed">
@@ -99,7 +99,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   4. Data Sharing & Disclosure
                 </h2>
                 <p className="text-muted-foreground mb-3 leading-relaxed">
@@ -120,7 +120,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   5. Cookies & Tracking
                 </h2>
                 <p className="text-muted-foreground mb-3">
@@ -137,7 +137,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   6. Third-Party Links
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -148,7 +148,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   7. Data Retention
                 </h2>
                 <p className="text-muted-foreground mb-3">
@@ -161,7 +161,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   8. Your Rights
                 </h2>
                 <p className="text-muted-foreground mb-3">
@@ -178,7 +178,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   9. Changes to This Policy
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -188,7 +188,7 @@ const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   10. Contact Information
                 </h2>
                 <p className="text-muted-foreground mb-3 leading-relaxed">
@@ -196,7 +196,7 @@ const PrivacyPolicy = () => {
                 </p>
                 <div className="text-muted-foreground space-y-2">
                   <p>
-                    📧 Email:{" "}
+                    Email:{" "}
                     <a
                       href="mailto:huntersthecode@gmail.com"
                       className="text-primary hover:underline"
@@ -204,8 +204,8 @@ const PrivacyPolicy = () => {
                       huntersthecode@gmail.com
                     </a>
                   </p>
-                  <p>📞 Contact: 9106433706</p>
-                  <p>📍 Location: India</p>
+                  <p>Contact: 9106433706</p>
+                  <p>Location: India</p>
                 </div>
               </div>
             </div>

@@ -111,11 +111,7 @@ const About = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-foreground relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/20 rounded-full blur-3xl" />
-        </div>
+      <section className="pt-32 pb-20 surface-ink">
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -127,13 +123,13 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1, duration: 0.4 }}
-              className="inline-block px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6"
+              className="inline-block px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[hsl(var(--glow-teal))] text-sm font-medium mb-6"
             >
               About CodingHunters
             </motion.span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-background mb-6 leading-tight">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-background mb-6 leading-tight">
               Custom Software Development{" "}
-              <span className="text-accent">Company in Bhuj-Kutchh</span>
+              Company in Bhuj, Kutch
             </h1>
             <p className="text-background/70 text-lg md:text-xl max-w-2xl mx-auto">
               Building reliable, scalable, and cost-effective software solutions
@@ -165,7 +161,7 @@ const About = () => {
                 <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <p className="text-3xl md:text-4xl font-display font-bold text-gradient mb-1">
+                <p className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-1">
                   {stat.value}
                 </p>
                 <p className="text-muted-foreground text-sm">{stat.label}</p>
@@ -185,8 +181,8 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-accent font-medium text-sm uppercase tracking-wider">Who We Are</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
+              <span className="text-primary font-medium text-sm">Who We Are</span>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-2 mb-6">
                 Your Trusted Technology Partner
               </h2>
               <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -267,8 +263,8 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center mb-12"
           >
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">What We Do</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+            <span className="text-primary font-medium text-sm">What We Do</span>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-2 mb-4">
               Our Core Expertise
             </h2>
             <p className="text-muted-foreground">
@@ -319,7 +315,7 @@ const About = () => {
                 <div className="w-14 h-14 rounded-xl bg-primary-foreground/20 flex items-center justify-center mb-6">
                   <Target className="w-7 h-7" />
                 </div>
-                <h3 className="font-display text-2xl font-bold mb-4">
+                <h3 className="font-display text-2xl font-semibold mb-4">
                   Our Mission
                 </h3>
                 <p className="opacity-90 leading-relaxed mb-6">
@@ -350,7 +346,7 @@ const About = () => {
                 <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
                   <Eye className="w-7 h-7 text-accent" />
                 </div>
-                <h3 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h3 className="font-display text-2xl font-semibold text-foreground mb-4">
                   Our Vision
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
@@ -382,8 +378,8 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">Why We Exist</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+            <span className="text-primary font-medium text-sm">Why We Exist</span>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-2 mb-4">
               Solving Real Business Challenges
             </h2>
           </motion.div>
@@ -396,7 +392,7 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="p-8 rounded-2xl bg-destructive/5 border border-destructive/20"
             >
-              <h4 className="font-display font-bold text-xl text-foreground mb-6 flex items-center gap-2">
+              <h4 className="font-display font-semibold text-xl text-foreground mb-6 flex items-center gap-2">
                 <span className="w-8 h-8 rounded-full bg-destructive/10 flex items-center justify-center text-destructive">✗</span>
                 Common Challenges
               </h4>
@@ -417,7 +413,7 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="p-8 rounded-2xl bg-accent/5 border border-accent/20"
             >
-              <h4 className="font-display font-bold text-xl text-foreground mb-6 flex items-center gap-2">
+              <h4 className="font-display font-semibold text-xl text-foreground mb-6 flex items-center gap-2">
                 <span className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent">✓</span>
                 Our Solutions
               </h4>
@@ -444,8 +440,8 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">Leadership</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+            <span className="text-primary font-medium text-sm">Leadership</span>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-2 mb-4">
               Leadership Behind CodingHunters
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
@@ -462,7 +458,7 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="space-y-4"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
                 <Lightbulb className="w-4 h-4" />
                 Business-first mindset
               </div>
@@ -521,8 +517,8 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">Our Process</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+            <span className="text-primary font-medium text-sm">Our Process</span>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-2 mb-4">
               How We Work
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -541,11 +537,11 @@ const About = () => {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="relative p-6 rounded-2xl bg-card border border-border group hover:border-primary/30 hover:shadow-lg transition-all"
               >
-                <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold shadow-lg">
+                <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground font-semibold shadow-lg">
                   {index + 1}
                 </div>
                 <div className="pt-4">
-                  <h4 className="font-display font-bold text-lg text-foreground mb-2">
+                  <h4 className="font-display font-semibold text-lg text-foreground mb-2">
                     {item.step}
                   </h4>
                   <p className="text-muted-foreground text-sm">{item.desc}</p>
@@ -566,8 +562,8 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">Industries</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+            <span className="text-primary font-medium text-sm">Industries</span>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-2 mb-4">
               Sectors We Serve
             </h2>
             <p className="text-muted-foreground">
@@ -585,7 +581,7 @@ const About = () => {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="p-6 rounded-2xl bg-background border border-border text-center group hover:shadow-lg hover:-translate-y-1 transition-all"
               >
-                <div className={`w-14 h-14 rounded-xl ${industry.color} flex items-center justify-center mx-auto mb-4`}>
+                <div className={`w-14 h-14 rounded-xl bg-primary flex items-center justify-center mx-auto mb-4`}>
                   <industry.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
                 <h4 className="font-semibold text-foreground mb-1">{industry.label}</h4>
@@ -606,8 +602,8 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">Why Choose Us</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+            <span className="text-primary font-medium text-sm">Why Choose Us</span>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mt-2 mb-4">
               What Makes Us Different
             </h2>
           </motion.div>
@@ -625,7 +621,7 @@ const About = () => {
                 <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <item.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <h4 className="font-display font-bold text-lg text-foreground mb-2">
+                <h4 className="font-display font-semibold text-lg text-foreground mb-2">
                   {item.title}
                 </h4>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
@@ -661,7 +657,7 @@ const About = () => {
             <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-6">
               <Shield className="w-8 h-8 text-primary-foreground" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
               Our Commitment
             </h2>
             <p className="text-muted-foreground mb-10">
@@ -692,11 +688,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-foreground relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-primary/30 rounded-full blur-3xl" />
-        </div>
+      <section className="section-padding surface-ink">
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -705,9 +697,8 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-background mb-6">
-              Let's Build Something{" "}
-              <span className="text-accent">Powerful</span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-background mb-6">
+              Let's build something powerful
             </h2>
             <p className="text-background/70 text-lg mb-10">
               Looking for a reliable software development partner that understands
@@ -720,11 +711,7 @@ const About = () => {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
-              <Button
-                size="xl"
-                className="bg-background/10 text-background border border-background/20 hover:bg-background/20"
-                asChild
-              >
+              <Button variant="onDark" size="xl" asChild>
                 <Link to="/services">View Our Services</Link>
               </Button>
             </div>

@@ -34,7 +34,7 @@ const BlogPost = () => {
             <span className="inline-flex items-center gap-1"><Clock className="w-4 h-4" />{post.readTime}</span>
             <span className="inline-flex items-center gap-1"><User className="w-4 h-4" />{post.author}</span>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-4">
             {post.title}
           </h1>
           <p className="text-lg text-muted-foreground mb-6">{post.excerpt}</p>

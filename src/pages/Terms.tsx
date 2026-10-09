@@ -12,8 +12,8 @@ const Terms = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Terms & <span className="text-gradient">Conditions</span>
+            <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6">
+              Terms & <span>Conditions</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               Effective Date: 30/1/2023
@@ -38,7 +38,7 @@ const Terms = () => {
           >
             <div className="p-8 rounded-2xl bg-background border border-border space-y-8">
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   1. Services
                 </h2>
                 <p className="text-muted-foreground mb-3">CodingHunters provides:</p>
@@ -55,7 +55,7 @@ const Terms = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   2. Project Engagement & Payments
                 </h2>
                 <ul className="list-disc list-inside text-muted-foreground space-y-2">
@@ -71,7 +71,7 @@ const Terms = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   3. Intellectual Property
                 </h2>
                 <ul className="list-disc list-inside text-muted-foreground space-y-2">
@@ -88,7 +88,7 @@ const Terms = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   4. Client Responsibilities
                 </h2>
                 <p className="text-muted-foreground mb-3">
@@ -105,7 +105,7 @@ const Terms = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   5. Confidentiality
                 </h2>
                 <p className="text-muted-foreground mb-3">
@@ -123,7 +123,7 @@ const Terms = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   6. Support & Maintenance
                 </h2>
                 <ul className="list-disc list-inside text-muted-foreground space-y-2">
@@ -134,7 +134,7 @@ const Terms = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   7. Limitation of Liability
                 </h2>
                 <p className="text-muted-foreground mb-3">
@@ -151,7 +151,7 @@ const Terms = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   8. Termination
                 </h2>
                 <p className="text-muted-foreground mb-3">
@@ -169,7 +169,7 @@ const Terms = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   9. Governing Law
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -179,7 +179,7 @@ const Terms = () => {
               </div>
 
               <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
                   10. Changes to Terms
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">

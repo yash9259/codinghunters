@@ -9,21 +9,26 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        outline: "border border-input bg-background hover:bg-secondary hover:text-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        ghost: "hover:bg-secondary hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-primary text-primary-foreground shadow-primary hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
-        heroOutline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground",
-        accent: "bg-accent text-accent-foreground hover:bg-accent/90 shadow-md hover:shadow-glow",
+        // Primary action on paper: solid ink.
+        hero: "btn-shine rounded-full bg-foreground text-background hover:-translate-y-0.5 hover:bg-primary",
+        // Secondary action on paper: hairline.
+        heroOutline: "rounded-full border border-foreground/25 bg-transparent text-foreground hover:border-foreground hover:bg-foreground hover:text-background",
+        // Primary action on ink: teal fill.
+        accent: "btn-shine rounded-full bg-[hsl(var(--glow-teal))] font-semibold text-[hsl(var(--ink))] shadow-[0_10px_30px_-10px_hsl(var(--glow-teal)/0.6)] hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-10px_hsl(var(--glow-teal)/0.8)]",
+        // Secondary action on ink: hairline.
+        onDark: "rounded-full border border-white/20 bg-transparent text-white hover:border-white/50 hover:bg-white/10",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
-        lg: "h-12 rounded-lg px-8 text-base",
-        xl: "h-14 rounded-xl px-10 text-lg",
+        lg: "h-12 px-7 text-[0.95rem]",
+        xl: "h-14 px-9 text-base",
         icon: "h-10 w-10",
       },
     },

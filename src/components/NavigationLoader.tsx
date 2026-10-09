@@ -1,82 +1,33 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { Code2 } from "lucide-react";
 
+/**
+ * Thin progress line at the top of the screen on route change.
+ * Replaces the full-screen spinner that covered the page for 800 ms on every
+ * click. It never blocks content or clicks.
+ */
 const NavigationLoader = () => {
-  const [loading, setLoading] = useState(false);
-  const location = useLocation();
+  const { pathname } = useLocation();
+  const [tick, setTick] = useState(0);
+  const isFirst = useRef(true);
 
   useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 800);
+    // The first render is the page already being there, not a navigation.
+    if (isFirst.current) {
+      isFirst.current = false;
+      return;
+    }
+    setTick((t) => t + 1);
+  }, [pathname]);
 
-    return () => clearTimeout(timer);
-  }, [location.pathname]);
+  if (tick === 0) return null;
 
   return (
-    <AnimatePresence>
-      {loading && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm"
-        >
-          <div className="text-center">
-            <motion.div
-              animate={{
-                rotate: 360,
-              }}
-              transition={{
-                duration: 1,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="inline-block"
-            >
-              <Code2 className="w-12 h-12 text-primary" />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="mt-4 flex items-center justify-center gap-1"
-            >
-              <motion.div
-                animate={{ scale: [1, 1.5, 1] }}
-                transition={{
-                  duration: 0.6,
-                  repeat: Infinity,
-                  delay: 0,
-                }}
-                className="w-2 h-2 bg-primary rounded-full"
-              />
-              <motion.div
-                animate={{ scale: [1, 1.5, 1] }}
-                transition={{
-                  duration: 0.6,
-                  repeat: Infinity,
-                  delay: 0.2,
-                }}
-                className="w-2 h-2 bg-primary rounded-full"
-              />
-              <motion.div
-                animate={{ scale: [1, 1.5, 1] }}
-                transition={{
-                  duration: 0.6,
-                  repeat: Infinity,
-                  delay: 0.4,
-                }}
-                className="w-2 h-2 bg-primary rounded-full"
-              />
-            </motion.div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <div
+      key={tick}
+      aria-hidden="true"
+      className="route-progress pointer-events-none fixed inset-x-0 top-0 z-[60] h-0.5 bg-[hsl(var(--glow-teal))]"
+    />
   );
 };
 

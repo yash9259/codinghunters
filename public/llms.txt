@@ -1,0 +1,35 @@
+# CodingHunters
+
+> CodingHunters is a custom software development company based in Bhuj, Kutch, Gujarat, India, founded and led by Yash Thakkar. It builds websites, Android and hybrid mobile apps, ERP and billing software, healthcare software and finance/fintech software for clients in Bhuj, across Kutch, in Ahmedabad and the rest of Gujarat, and across India. Delivered 50+ projects for 30+ clients; 5+ years of experience.
+
+Facts
+- Company: CodingHunters (also written Coding Hunters)
+- Founder: Yash Thakkar
+- Location: Bhuj, Kutch, Gujarat, India (Ahmedabad and other clients are served remotely)
+- Phone: +91 91064 33706
+- WhatsApp: +91 87800 15308
+- Email: huntersthecode@gmail.com
+- Website: https://www.codinghunters.in
+- Free consultation available; written scope and quotation before development starts
+- Technologies: HTML, CSS, Bootstrap, JavaScript, React, PHP, Laravel, Node.js, Android (Java/Kotlin), MySQL, Firebase, REST APIs, payment gateways
+
+## Core pages
+- [Home](https://www.codinghunters.in/): Overview of CodingHunters and its services
+- [Services](https://www.codinghunters.in/services): Website, mobile app, ERP, healthcare, finance, UI/UX and support services
+- [About](https://www.codinghunters.in/about): Company background and founder
+- [Technologies](https://www.codinghunters.in/technologies): Technology stack
+- [Portfolio](https://www.codinghunters.in/portfolio): Industries and project types delivered
+- [FAQ](https://www.codinghunters.in/faq): Answers about working with CodingHunters
+- [Contact](https://www.codinghunters.in/contact): Book a free consultation
+
+## Locations served
+- [Software development company in Bhuj](https://www.codinghunters.in/software-development-company-in-bhuj)
+- [Software development company in Kutch](https://www.codinghunters.in/software-development-company-in-kutch)
+- [Software development services in Ahmedabad](https://www.codinghunters.in/software-development-services-in-ahmedabad)
+- [Software development company in Gujarat](https://www.codinghunters.in/software-development-company-in-gujarat)
+- [Software development company in India](https://www.codinghunters.in/software-development-company-in-india)
+
+## Articles
+- [Top 10 software development companies in Bhuj](https://www.codinghunters.in/blog/top-10-software-development-companies-in-bhuj)
+- [Why Bhuj businesses choose custom ERP](https://www.codinghunters.in/blog/why-bhuj-businesses-choose-custom-erp)
+- [How to brief a software company in Bhuj](https://www.codinghunters.in/blog/how-to-brief-a-software-company-in-bhuj)

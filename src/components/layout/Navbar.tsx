@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import BrandLogo from "./BrandLogo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -21,104 +22,106 @@ const Navbar = () => {
   const location = useLocation();
 
   const isActive = (href: string) =>
-    location.pathname === href || location.pathname.startsWith(`${href}/`);
+    href === "/"
+      ? location.pathname === "/"
+      : location.pathname === href || location.pathname.startsWith(`${href}/`);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 8);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     setIsOpen(false);
-  }, [location]);
+  }, [location.pathname]);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black shadow-md`}
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
+        isScrolled || isOpen
+          ? "border-white/10 bg-[hsl(var(--ink)/0.72)] shadow-[0_10px_40px_-20px_rgba(0,0,0,0.8)] backdrop-blur-2xl"
+          : "border-white/[0.06] bg-[hsl(var(--ink))]"
+      }`}
     >
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-24 md:h-28">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <img src="/logo.png" alt="CodingHunters Logo" className="w-20 h-25 " />
-            
+      <nav aria-label="Main" className="container-custom">
+        <div className="flex h-[4.5rem] items-center justify-between gap-6">
+          <Link to="/" className="shrink-0" aria-label="CodingHunters home">
+            <BrandLogo className="w-[6.25rem]" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`relative flex h-[4.5rem] items-center px-3.5 text-[0.9rem] font-medium transition-colors ${
                   isActive(link.href)
-                    ? "text-cyan-400 bg-cyan-400/10"
-                    : "text-gray-300 hover:text-white hover:bg-gray-800"
+                    ? "text-white"
+                    : "text-[hsl(var(--ink-muted))] hover:text-white"
                 }`}
               >
                 {link.label}
+                {isActive(link.href) && (
+                  <motion.span layoutId="nav-active" transition={{ type: "spring", stiffness: 380, damping: 32 }} className="absolute inset-x-3.5 bottom-0 h-[2px] rounded-full bg-gradient-to-r from-[hsl(var(--glow-teal))] to-[hsl(var(--glow-violet))]" />
+                )}
               </Link>
             ))}
           </div>
 
-          {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button variant="hero" size="default" asChild>
-              <Link to="/contact">Get Free Consultation</Link>
+            <Button variant="accent" size="default" asChild>
+              <Link to="/contact">Get free consultation</Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors"
-            aria-label="Toggle menu"
+            className="lg:hidden -mr-2 p-2 rounded-md text-white hover:bg-white/10 transition-colors"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
           >
-            {isOpen ? (
-              <X className="w-6 h-6 text-white" />
-            ) : (
-              <Menu className="w-6 h-6 text-white" />
-            )}
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-gray-900 border-t border-gray-800 overflow-hidden"
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="lg:hidden overflow-hidden border-t border-white/10"
           >
-            <div className="container-custom py-4 space-y-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                    isActive(link.href)
-                      ? "text-cyan-400 bg-cyan-400/10"
-                      : "text-gray-300 hover:text-white hover:bg-gray-800"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="pt-4">
-                <Button variant="hero" size="lg" className="w-full" asChild>
-                  <Link to="/contact">Get Free Consultation</Link>
+            <div className="container-custom py-4">
+              <div className="ruled-ink">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    aria-current={isActive(link.href) ? "page" : undefined}
+                    className={`block py-3.5 font-display text-xl font-medium ${
+                      isActive(link.href) ? "text-[hsl(var(--glow-teal))]" : "text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              <div className="pt-4 pb-2">
+                <Button variant="accent" size="lg" className="w-full" asChild>
+                  <Link to="/contact">Get free consultation</Link>
                 </Button>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </header>
   );
 };
 

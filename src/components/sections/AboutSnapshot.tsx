@@ -1,78 +1,63 @@
-import { motion } from "framer-motion";
 import { Lightbulb, DollarSign, Headphones, Target } from "lucide-react";
+import Reveal from "@/components/fx/Reveal";
+import SpotlightCard from "@/components/fx/SpotlightCard";
 
-const AboutSnapshot = () => {
-  const highlights = [
-    {
-      icon: Lightbulb,
-      title: "100% Custom Solutions",
-      description: "Every project is built from scratch to match your exact business needs.",
-    },
-    {
-      icon: DollarSign,
-      title: "One-time Cost Model",
-      description: "No recurring fees. Pay once and own your software forever.",
-    },
-    {
-      icon: Headphones,
-      title: "Post-launch Support",
-      description: "We stay with you after delivery with dedicated support.",
-    },
-    {
-      icon: Target,
-      title: "Industry-focused",
-      description: "Specialized solutions for healthcare, finance, and more.",
-    },
-  ];
+const highlights = [
+  {
+    icon: Lightbulb,
+    title: "100% custom solutions",
+    description: "Every project is built from scratch to match your exact business needs.",
+  },
+  {
+    icon: DollarSign,
+    title: "One-time cost model",
+    description: "No recurring fees. Pay once and own your software forever.",
+  },
+  {
+    icon: Headphones,
+    title: "Post-launch support",
+    description: "We stay with you after delivery with dedicated support.",
+  },
+  {
+    icon: Target,
+    title: "Industry-focused",
+    description: "Specialized solutions for healthcare, finance, and more.",
+  },
+];
 
-  return (
-    <section className="section-padding bg-card">
-      <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            We Don't Just Build Software
-          </h2>
-          <p className="text-xl text-gradient font-semibold mb-4">
-            We Solve Business Problems Using Technology
-          </p>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            CodingHunters is a professional software development agency providing
-            end-to-end IT solutions for businesses, hospitals, clinics, finance
-            companies, and startups.
-          </p>
-        </motion.div>
+const AboutSnapshot = () => (
+  <section className="section-padding relative overflow-hidden bg-card">
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-[hsl(var(--glow-teal)/0.12)] blur-3xl"
+    />
+    <div className="container-custom relative grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+      <Reveal className="lg:sticky lg:top-28 lg:self-start">
+        <h2 className="font-display text-3xl font-semibold leading-[1.1] text-foreground md:text-5xl">
+          We don't just build software. We solve business problems using technology.
+        </h2>
+        <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">
+          CodingHunters is a professional software development agency providing
+          end-to-end IT solutions for businesses, hospitals, clinics, finance
+          companies, and startups.
+        </p>
+      </Reveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {highlights.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group p-6 rounded-2xl bg-background border border-border card-hover"
-            >
-              <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <item.icon className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h3 className="font-display font-semibold text-lg text-foreground mb-2">
-                {item.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+      <ul className="grid gap-5 sm:grid-cols-2">
+        {highlights.map((item, i) => (
+          <Reveal as="li" key={item.title} delay={i * 90}>
+            <SpotlightCard className="h-full p-7">
+              <span className="bg-gradient-primary flex h-12 w-12 items-center justify-center rounded-xl text-white">
+                <item.icon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
+              </span>
+              <h3 className="mt-6 font-display text-xl font-semibold text-foreground">{item.title}</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">{item.description}</p>
+            </SpotlightCard>
+          </Reveal>
+        ))}
+      </ul>
+    </div>
+  </section>
+);
 
 export default AboutSnapshot;

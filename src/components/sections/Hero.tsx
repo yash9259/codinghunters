@@ -1,151 +1,89 @@
+import { type MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { SITE } from "@/seo/siteData";
+import CountUp from "@/components/fx/CountUp";
+import HeroArt from "./HeroArt";
+
+const facts = [
+  { value: SITE.stats.projects, label: "projects delivered" },
+  { value: SITE.stats.clients, label: "clients served" },
+  { value: SITE.stats.years, label: "years in business" },
+  { value: "One-time", label: "cost, you own the code" },
+];
+
+const headline = "Custom Software, Web & App Development Company in Bhuj, Kutch";
 
 const Hero = () => {
-  const features = [
-    "100% Custom Solutions",
-    "One-time Cost Model",
-    "Post-launch Support",
-    "Industry-focused Development",
-  ];
+  const handleMove = (e: MouseEvent<HTMLElement>) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--hx", `${e.clientX - r.left}px`);
+    e.currentTarget.style.setProperty("--hy", `${e.clientY - r.top}px`);
+  };
 
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-hero overflow-hidden pt-20">
-      {/* Background Decorations */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 -left-32 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float-delayed" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-primary/5 to-transparent rounded-full" />
-      </div>
+    <section className="surface-ink overflow-hidden pt-[4.5rem]" onMouseMove={handleMove}>
+      <div className="hero-light" aria-hidden="true" />
+      <div className="grain" aria-hidden="true" />
 
-      <div className="container-custom relative z-10 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center lg:text-left"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.1, duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 text-primary text-sm font-medium mb-6"
-            >
-              <Sparkles className="w-4 h-4" />
-              Trusted by Startups & Businesses Across India
-            </motion.div>
-
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Custom Software, Web &{" "}
-              <span className="text-gradient">App Development</span> Company
+      <div className="container-custom pt-12 pb-20 lg:pt-24 lg:pb-28">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+          <div className="order-2 lg:order-1">
+            <h1 className="font-display text-[2.6rem] font-semibold leading-[1.04] text-white sm:text-5xl lg:text-[3.75rem]">
+              {headline.split(" ").map((word, i) => (
+                <span key={`${word}-${i}`}>
+                  <span className="word-in" style={{ ["--i" as string]: i }}>
+                    {word}
+                  </span>{" "}
+                </span>
+              ))}
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
+            <p className="fade-up mt-7 max-w-xl text-lg leading-relaxed text-[hsl(var(--ink-muted))]" style={{ ["--d" as string]: "900ms" }}>
               CodingHunters helps businesses grow with secure, scalable, and
               affordable software solutions including web development, mobile
               apps, ERP systems, healthcare software, and finance automation
               tools.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
-              <Button variant="hero" size="xl" asChild>
+            <div className="fade-up mt-9 flex flex-col gap-3 sm:flex-row" style={{ ["--d" as string]: "1100ms" }}>
+              <Button variant="accent" size="xl" className="btn-glow" asChild>
                 <Link to="/contact">
-                  Get Free Consultation
-                  <ArrowRight className="w-5 h-5" />
+                  Get free consultation
+                  <ArrowRight className="!size-5" />
                 </Link>
               </Button>
-              <Button variant="heroOutline" size="xl" asChild>
-                <Link to="/portfolio">Request Demo</Link>
+              <Button variant="onDark" size="xl" asChild>
+                <Link to="/portfolio">See our work</Link>
               </Button>
             </div>
+          </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="grid grid-cols-2 gap-3"
-            >
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 text-muted-foreground"
-                >
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="text-sm">{feature}</span>
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Hero Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="relative hidden lg:block"
-          >
-            <div className="relative">
-              {/* Main Card */}
-              <div className="bg-card rounded-2xl shadow-xl p-8 border border-border">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 rounded-full bg-destructive" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                    <div className="w-3 h-3 rounded-full bg-green-400" />
-                  </div>
-                  <div className="space-y-3">
-                    <div className="h-4 bg-muted rounded w-3/4" />
-                    <div className="h-4 bg-muted rounded w-1/2" />
-                    <div className="h-4 bg-primary/20 rounded w-5/6" />
-                    <div className="h-4 bg-muted rounded w-2/3" />
-                    <div className="h-4 bg-accent/20 rounded w-3/4" />
-                  </div>
-                  <div className="pt-4 flex gap-2">
-                    <div className="h-10 bg-gradient-primary rounded-lg flex-1" />
-                    <div className="h-10 bg-muted rounded-lg w-20" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Elements */}
-              <div className="absolute -top-6 -right-6 bg-card rounded-xl shadow-lg p-4 border border-border animate-float">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <CheckCircle2 className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-foreground">
-                      Secure Code
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      100% Clean
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-4 -left-8 bg-card rounded-xl shadow-lg p-4 border border-border animate-float-delayed">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Sparkles className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-foreground">
-                      50+ Projects
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      Delivered
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          <div className="order-1 lg:order-2">
+            <HeroArt />
+          </div>
         </div>
+      </div>
+
+      <div className="relative border-t border-[hsl(var(--ink-line))] bg-[hsl(var(--ink)/0.5)] backdrop-blur-sm">
+        <dl className="container-custom grid grid-cols-2 lg:grid-cols-4">
+          {facts.map((f, i) => (
+            <div
+              key={f.label}
+              className={`flex flex-col-reverse justify-end py-6 pr-4 lg:py-9 ${
+                i % 2 === 1 ? "pl-5 border-l border-[hsl(var(--ink-line))]" : ""
+              } ${i >= 2 ? "border-t border-[hsl(var(--ink-line))] lg:border-t-0" : ""} ${
+                i > 0 ? "lg:pl-8 lg:border-l lg:border-[hsl(var(--ink-line))]" : ""
+              }`}
+            >
+              <dt className="mt-1 text-sm text-[hsl(var(--ink-muted))]">{f.label}</dt>
+              <dd className="font-display text-3xl font-semibold tracking-tight text-white lg:text-5xl">
+                <CountUp value={f.value} />
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

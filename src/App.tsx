@@ -2,37 +2,40 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
-import ScrollToTop from "./components/ScrollToTop";
 import LoadingScreen from "./components/LoadingScreen";
-import NavigationLoader from "./components/NavigationLoader";
-import Index from "./pages/Index";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Technologies from "./pages/Technologies";
-import Portfolio from "./pages/Portfolio";
-import WhyUs from "./pages/WhyUs";
-import Contact from "./pages/Contact";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Terms from "./pages/Terms";
-import NotFound from "./pages/NotFound";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
+import AppRoutes from "./AppRoutes";
 
 const queryClient = new QueryClient();
 
+// Show the intro loader only once per browser session. It used to block every
+// full page load for 2.5s, which hurts Core Web Vitals (LCP) and rankings.
+const shouldShowLoader = () => {
+  try {
+    return !sessionStorage.getItem("ch_intro_seen");
+  } catch {
+    return true;
+  }
+};
+
 const App = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(shouldShowLoader);
 
   useEffect(() => {
+    if (!loading) return;
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2500);
+      try {
+        sessionStorage.setItem("ch_intro_seen", "1");
+      } catch {
+        /* ignore */
+      }
+    }, 1200);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [loading]);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -44,23 +47,7 @@ const App = () => {
             <LoadingScreen key="loading" />
           ) : (
             <BrowserRouter key="content">
-              <ScrollToTop />
-              <NavigationLoader />
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/technologies" element={<Technologies />} />
-                <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/why-us" element={<WhyUs />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:slug" element={<BlogPost />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/terms" element={<Terms />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <AppRoutes />
             </BrowserRouter>
           )}
         </AnimatePresence>

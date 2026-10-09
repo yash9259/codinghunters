@@ -41,8 +41,8 @@ const Technologies = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Our <span className="text-gradient">Technologies</span>
+            <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6">
+              Our <span>Technologies</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               We use modern, battle-tested technologies to build robust and

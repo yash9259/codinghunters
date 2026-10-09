@@ -56,8 +56,8 @@ const WhyUs = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Why Choose <span className="text-gradient">CodingHunters?</span>
+            <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6">
+              Why Choose <span>CodingHunters?</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               We're not just another software company. Here's what makes us
